@@ -11,9 +11,7 @@ import tensorflow as tf
 from keras.layers import Input
 import numpy as np
 import argparse
-#from keras_applications.resnext import ResNeXt50
 from keras.utils.data_utils import get_file
-#import face_recognition
 from tensorflow.keras.utils import to_categorical
 
 import pandas as pd
@@ -58,7 +56,7 @@ for i in range(0, df.shape[0]):
     age_temp[i] = val
 
 
-
+#Converting the classes into numpy arrays and one-hot encoding them
 age_temp = np.array(age_temp)
 age = to_categorical(age_temp, num_classes = 5)
 age = age.astype('float32')
@@ -78,7 +76,7 @@ ethnicity = ethnicity.astype('float32')
 # In[ ]:
 
 
-#Splitting data into train, test, and cross validation 
+#Splitting data into train, test, and cross validation (60-20-20)
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 #First, we split the data into train and remainder
@@ -103,7 +101,7 @@ print(len(X_train_gender))
 # In[ ]:
 
 
-#Gender Model
+#Gender Model - 3 convolutional layers, 2 fully connected layers
 
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Flatten,BatchNormalization
@@ -151,37 +149,11 @@ trained_gender_model = gender_model.fit(X_train_gender, gender_train, batch_size
 # In[4]:
 
 
-#from tensorflow.keras.models import load_model
-#import tarfile
-#import os
-
-#gender_model_new = load_model("gender_model_new")
-#age_model_new = load_model("age_model_new")
-#ethnicity_model_new = load_model("ethnicity_model_new")
-
-#file_path = f"./tf-models/"
-#gender_model_new.save(filepath=file_path + "gender_model_new", save_format='tf')
-#age_model_new.save(filepath=file_path + "age_model_new", save_format='tf')
-#ethnicity_model_new.save(filepath=file_path + "ethnicity_model_new", save_format='tf')
-
-
-
-
-#def tar_folder(output_filename: str, source_dir: str):
-#    with tarfile.open(output_filename, "w:gz") as tar:
-#        tar.add(source_dir, arcname=os.path.basename(source_dir))
-
-#OUT_FILE = 'tf-models.tar.gz'
-
-#SOURCE_FILE = "tf-models"
-
-#tar_folder(output_filename=OUT_FILE, source_dir=SOURCE_FILE)
-
-
 # In[ ]:
 
 
-#Age Model
+#Age Model - 3 convolutional layers, 2 fully connected layers
+
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Flatten,BatchNormalization
 from tensorflow.keras.layers import Dense, MaxPooling2D,Conv2D
@@ -229,7 +201,8 @@ trained_age_model = age_model.fit(X_train_age, age_train, batch_size = 32, valid
 # In[ ]:
 
 
-#Age Model
+#Ethnicity Model - 3 convolutional layers, 2 fully connected layers
+
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras.layers import Flatten,BatchNormalization
 from tensorflow.keras.layers import Dense, MaxPooling2D,Conv2D
@@ -268,7 +241,6 @@ def model(input_shape, output_shape, loss_function):
     model.compile(loss = loss_function, optimizer = "Adam", metrics = ["Accuracy"])
     return model
 
-#change to ethnicity model cuz this is ethnicity model
 ethnicity_model = model((48, 48, 1), 5, 'mse')
 ethnicity_model.summary()
 trained_ethnicity_model = ethnicity_model.fit(X_train_ethnicity, ethnicity_train, batch_size = 32, validation_data=(X_cv_ethnicity, ethnicity_cv), epochs = 40)

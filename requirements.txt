@@ -3,7 +3,7 @@ Flask
 gunicorn
 itsdangerous
 Jinja2
-MarkupSafe = 1.1.1
+MarkupSafe==1.1.1
 keras
 tensorflow
 numpy

@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<title>Age, Gender, and Ethnicity prediction</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+<p><h1 align="center">Age, Gender, and Ethnicity prediction</h1></p>
+<div class="container">
+<div class="row">
+    <h2>Please upload a clear picture of your face!</h2>
+
+    
+    <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Submit" class="btn btn-info">
+        </p>
+    </form>
+    {% if age %}
+    <p> Age = {{age}} </p>
+    {% endif %}
+    {% if gender %}
+    <p> Gender = {{gender}} </p>
+    {% endif %}
+    {% if ethnicity %}
+    <p> Ethnicity = {{ethnicity}} </p>
+    {% endif %}
+    
+</div>
+</div>
+</body>
+</html>

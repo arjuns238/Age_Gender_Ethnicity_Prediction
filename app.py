@@ -7,7 +7,7 @@
 from PIL import Image, ImageFilter
 import numpy as np
 from tensorflow.keras.models import load_model
-from resizeimage import resizeimage
+#from resizeimage import resizeimage
 import matplotlib.pyplot as plt
 
 

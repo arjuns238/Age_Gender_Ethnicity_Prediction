@@ -81,10 +81,9 @@ def display_results():
     age_values_to_labels = ['0-20', '21 - 40', '41-60', '61-80', '80+']
     
    
-    with tarfile.open('tf-models.tar.gz') as tar:
-        Gmodel = load_model('gender_model_new')
-        Amodel = load_model('age_model_new')
-        Emodel = load_model('ethnicity_model_new')
+    Gmodel = load_model('gender_model_new')
+    Amodel = load_model('age_model_new')
+    Emodel = load_model('ethnicity_model_new')
     
     genderPred = Gmodel.predict(picture)
     print (genderPred)

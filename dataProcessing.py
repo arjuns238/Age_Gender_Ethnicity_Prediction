@@ -151,31 +151,31 @@ trained_gender_model = gender_model.fit(X_train_gender, gender_train, batch_size
 # In[4]:
 
 
-from tensorflow.keras.models import load_model
-import tarfile
-import os
+#from tensorflow.keras.models import load_model
+#import tarfile
+#import os
 
-gender_model_new = load_model("gender_model_new")
-age_model_new = load_model("age_model_new")
-ethnicity_model_new = load_model("ethnicity_model_new")
+#gender_model_new = load_model("gender_model_new")
+#age_model_new = load_model("age_model_new")
+#ethnicity_model_new = load_model("ethnicity_model_new")
 
-file_path = f"./tf-models/"
-gender_model_new.save(filepath=file_path + "gender_model_new", save_format='tf')
-age_model_new.save(filepath=file_path + "age_model_new", save_format='tf')
-ethnicity_model_new.save(filepath=file_path + "ethnicity_model_new", save_format='tf')
-
-
+#file_path = f"./tf-models/"
+#gender_model_new.save(filepath=file_path + "gender_model_new", save_format='tf')
+#age_model_new.save(filepath=file_path + "age_model_new", save_format='tf')
+#ethnicity_model_new.save(filepath=file_path + "ethnicity_model_new", save_format='tf')
 
 
-def tar_folder(output_filename: str, source_dir: str):
-    with tarfile.open(output_filename, "w:gz") as tar:
-        tar.add(source_dir, arcname=os.path.basename(source_dir))
 
-OUT_FILE = 'tf-models.tar.gz'
 
-SOURCE_FILE = "tf-models"
+#def tar_folder(output_filename: str, source_dir: str):
+#    with tarfile.open(output_filename, "w:gz") as tar:
+#        tar.add(source_dir, arcname=os.path.basename(source_dir))
 
-tar_folder(output_filename=OUT_FILE, source_dir=SOURCE_FILE)
+#OUT_FILE = 'tf-models.tar.gz'
+
+#SOURCE_FILE = "tf-models"
+
+#tar_folder(output_filename=OUT_FILE, source_dir=SOURCE_FILE)
 
 
 # In[ ]:

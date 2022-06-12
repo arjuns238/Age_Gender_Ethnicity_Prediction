@@ -9,7 +9,12 @@
 <p><h1 align="center">Age, Gender, and Ethnicity prediction</h1></p>
 <div class="container">
 <div class="row">
-    <h2>Please upload a clear picture of your face!</h2>
+    <h2>Upload a picture of your face to figure out your real age, gender and ethnicity!</h2>
+    <ul>
+      <li>Please upload a clear picture</li>
+      <li>Make sure that the picture is only of your face and not your entire body</li>
+      <li>Please upload only jpg or png photos</li>
+    </ul>
 
     
     <form method="post" action="/" enctype="multipart/form-data">
@@ -22,6 +27,7 @@
             <input type="submit" value="Submit" class="btn btn-info">
         </p>
     </form>
+    <h3>Your real age, gender, and ethnicity is:</h3>
     {% if age %}
     <p> Age = {{age}} </p>
     {% endif %}

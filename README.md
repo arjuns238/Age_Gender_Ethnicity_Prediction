@@ -16,6 +16,6 @@ dataProcessing.py
 
 Overall, the accuracies obtained are:
 Age - training = 87%, testing = 79%
-Gender - training = 97%, testing = 94%
+Gender - training = 97%, testing = 91%
 
 

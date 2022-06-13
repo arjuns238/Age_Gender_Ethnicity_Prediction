@@ -1,15 +1,15 @@
 
 <html>
 <head>
-<title>Age, Gender, and Ethnicity prediction</title>
+<title>Age and Gender prediction</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-<p><h1 align="center">Age, Gender, and Ethnicity prediction</h1></p>
+<p><h1 align="center">Age and Gender prediction</h1></p>
 <div class="container">
 <div class="row">
-    <h2>Upload a picture of your face to figure out your real age, gender and ethnicity!</h2>
+    <h2>Upload a picture of your face to figure out your real age and gender!</h2>
     <ul>
       <li>Please upload a clear picture</li>
       <li>Make sure that the picture is only of your face and not your entire body</li>
@@ -29,15 +29,13 @@
     </form>
    
     {% if age %}
-    <h3>Your real age, gender, and ethnicity is:</h3>
+    <h3>Predictions:</h3>
     <p> Age = {{age}} </p>
     {% endif %}
     {% if gender %}
     <p> Gender = {{gender}} </p>
     {% endif %}
-    {% if ethnicity %}
-    <p> Ethnicity = {{ethnicity}} </p>
-    {% endif %}
+    
     
 </div>
 </div>

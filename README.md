@@ -1,6 +1,6 @@
 # Age_Gender_Prediction
 This is a face recognition/classification project that uses Convolutional Neural Networks (CNN) to predict the user's age, gender, and ethnicity.
-Try it yourself on : https://age-gender-ethnicity.herokuapp.com/
+Try it yourself on : https://who-r-u.herokuapp.com/
 
 The user is required to upload a clear picture of only their face and the model predicts the user's age, gender, and ethnicity
 
